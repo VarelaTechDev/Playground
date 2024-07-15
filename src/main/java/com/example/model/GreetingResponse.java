@@ -1,9 +1,9 @@
 package com.example.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.americanexpress.synapse.service.rest.model.BaseServiceResponse;
 
 public class GreetingResponse extends BaseServiceResponse {
-
     private String message;
 
     public GreetingResponse(String message) {
@@ -16,6 +16,18 @@ public class GreetingResponse extends BaseServiceResponse {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    @Override
+    @JsonIgnore
+    public String getId() {
+        return super.getId();
+    }
+
+    @Override
+    @JsonIgnore
+    public void setId(String id) {
+        super.setId(id);
     }
 
     @Override
